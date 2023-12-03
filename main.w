@@ -3,11 +3,6 @@ bring expect;
 bring util;
 bring cloud;
 
-enum EntryType {
-  FILE,
-  DIR,
-}
-
 struct Entry {
   path: str;
   type: str;
