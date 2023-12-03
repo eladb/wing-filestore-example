@@ -96,24 +96,6 @@ class FileStorage {
 
 let f = new FileStorage();
 
-new cloud.Function(inflight () => {
-  f.addDirectory("/my/directory");
-  f.addFile("/my/directory/file.txt", "hello");
-  f.addFile("/my/directory/bang.txt", "world");
-
-  f.addDirectory("/my");
-  f.addFile("/my/yoo.txt", "world");
-  for entry in f.listDirectory("/my") {
-    log(entry.path);
-
-    if entry.type == "file" {
-      log("reading file {entry.path}");
-      let body = f.readFile(entry.path);
-      // log("BODY: {body}");
-    }
-  }
-
-});
 
 test "addFile and readFile" {
   f.addFile("hello.txt", "world");
